@@ -1,0 +1,5 @@
+Especificación,E(ATE),HPDI 5%,HPDI 95%,P(ATE>0),S draws
+AIPW + PS Logit (muestra completa),-0.4943,-0.8584,-0.0902,0.039,16000.0
+AIPW + PS Probit-BART (muestra completa),-0.7549,-1.1824,-0.3633,0.0068,16000.0
+AIPW + PS Logit (muestra recortada),1.9325,1.2706,2.6788,0.9992,16000.0
+AIPW + PS Probit-BART (muestra recortada),1.5727,0.9419,2.224,0.9974,16000.0

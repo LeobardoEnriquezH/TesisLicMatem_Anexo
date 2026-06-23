@@ -17,7 +17,7 @@ iter = 4000
 n_draws = iter - warmup
 
 #import confounder (I,M,S,U, etc), treatment (A), and outcome (Y)
-dat<-readxl::read_xlsx("dataset.xlsx")
+dat<-readxl::read_xlsx("dataset_trimmed.xlsx")
 N = nrow(dat) # sample size
 
 W_df <- data.frame(
@@ -52,14 +52,14 @@ Kt <- ncol(Wtrt)
 # --------------------------------------------------------------------------
 # Cambiar la clasificación que se quiere graficar:
 # "state", "pib_class", "informal_quintile", etc.
-stratum_var  <- "state"
-stratum_xlab <- "Estado"
+#stratum_var  <- "state"
+#stratum_xlab <- "Estado"
 
 #stratum_var  <- "pib_class"
 #stratum_xlab <- "Quintil de PIB"
 
-#stratum_var  <- "informal_class"
-#stratum_xlab <- "Quintil de informalidad inicial"
+stratum_var  <- "informal_class"
+stratum_xlab <- "Quintil de informalidad inicial"
 
 # Función para conservar orden lógico:
 # - si es factor, respeta el orden de sus niveles;
@@ -485,12 +485,12 @@ legend(
 # ---------------- Tabla dentro de la gráfica, abajo ----------------
 
 # Tamaño inicial de la tabla
-table_cex <- 0.62
+table_cex <- 0.72
 
 # Ajuste automático si la tabla es demasiado ancha o alta
 available_width <- 0.92 * diff(xlim_range)
 
-table_y_top <- data_ylim[1] - 0.45 * table_gap
+table_y_top <- data_ylim[1] - 0.25 * table_gap
 table_y_bottom_limit <- ylim_range[1] + 0.03 * diff(ylim_range)
 available_height <- table_y_top - table_y_bottom_limit
 
